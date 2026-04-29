@@ -1,5 +1,41 @@
 ---
 title: "In-class-template"
+author: "Maisie Prestridge"
 format: pdf
 ---
+
+# 1. Set up
+
+## Packages
+
+```{r}
+
+# general use and cleaning
+library(tidyverse)
+library(here)
+library(janitor)
+library(snakecase)
+
+# wrap axis labels
+library(scales)
+
+# reading .xlsx files 
+library(readxl)
+
+# visualise missing data 
+library(naniar)
+
+# arrange plots
+library(patchwork)
+```
+
+## Data
+
+```{r}
+#| label: data
+
+taxon_list <- read_csv(here("data", "taxon_list.csv"))
+
+```
+
 
