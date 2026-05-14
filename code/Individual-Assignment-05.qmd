@@ -146,9 +146,60 @@ aq_ins_clean <- aq_ins |>
 
 ## a. Plan your figure
 
-x-axis:
-y-axis:
-geometry to represent average abundance/L:
-geometry to represent medians:
+x-axis: site_full
+y-axis: log_ave_lit
+geometry to represent average abundance/L: geom_jitter()
+geometry to represent medians: geom_point()
 
-# 2. 
+## b. Wrangle your data
+
+```{r}
+#| label: wrangling-aq_ins_clean
+
+# new object created from clean aquatic inverts
+ostracods <- aq_ins_clean |>
+  # filter to only include copepods
+  filter(taxon == "ostracod") |>
+  # log + 1 to transform mean abundance/liter
+  mutate(log_ave_lit = log(ave_lit + 1))
+
+slice_sample(ostracods)
+```
+
+## c. Code your figure
+
+```{r}
+# base layer
+ostracodgraph <- ggplot(data = ostracods,
+       # x-axis: site
+       # y-axis: mean salinity
+       mapping = aes(x = site_full,
+                     y = log_ave_lit)) +
+  # salinity measurements at each survey
+  geom_jitter(height = 0,
+              width = 0.1,
+              shape = 21) +
+  # wrapping x-axis text
+  scale_x_discrete(labels = label_wrap(width = 15)) +
+  # points to represent means
+  stat_summary(fun = median,
+               color = "orange",
+               size = 1) +
+  # labelling x-axis and y-axis
+  labs(x = "Site",
+       y = "log + 1 transformed average abundance/L",
+       title = "Ostracods") +
+  
+  # change theme from default
+theme_bw()
+
+# displaying object
+ostracodgraph
+```
+
+## d. Create a multipanel figure
+
+## e. Interpret your figure
+
+# 2. Visualizing total abundance as a function of salinity
+
