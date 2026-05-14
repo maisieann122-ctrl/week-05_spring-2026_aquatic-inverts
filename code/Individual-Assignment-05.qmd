@@ -172,6 +172,7 @@ slice_sample(ostracods)
 ## c. Code your figure
 
 ```{r}
+#| label: coding-ostracod-plot
 # base layer
 ostracodgraph <- ggplot(data = ostracods,
        # x-axis: site
@@ -202,6 +203,7 @@ ostracodgraph
 ## d. Create a multipanel figure
 
 ```{r}
+#| label: coding-salinity-plot
 # salinity
 salinity <- ggplot(data = aq_ins_clean,
        # x-axis: site
@@ -229,6 +231,8 @@ salinity
 ```
 
 ```{r}
+#| label: coding-copepod-plot
+
 # cleaning copepods before graphing
 copepods <- aq_ins_clean |>
   # filter to only include copepods
@@ -265,6 +269,7 @@ copepods
 
 ```{r}
 #| label: displaying-multipanel-figure
+
 combined_plot <- 
   (salinity + labs(x = NULL)) / 
   plot_spacer() /
@@ -283,6 +288,7 @@ ggsave("multipanel_figure.png", combined_plot, width = 14, height = 10, dpi = 30
 ```
 
 ## e. Interpret your figure
+- The Copepod and Ostracod abundance both vary across all sites. However, the sites where they are most and least abundant are different. For example, Copepods are most abundant at Venoco Bridge, Devereux Creek, and NA. However, Ostracods are most abundant at West Pond, South of Phelps Bridge, and Devereux Creek.
 
 # 2. Visualizing total abundance as a function of salinity
 
