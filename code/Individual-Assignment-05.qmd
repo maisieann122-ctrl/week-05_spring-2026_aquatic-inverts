@@ -188,16 +188,43 @@ ostracodgraph <- ggplot(data = ostracods,
   # labelling x-axis and y-axis
   labs(x = "Site",
        y = "log + 1 transformed average abundance/L",
-       title = "Ostracods") +
-  
+       title = "Ostracod Abundance Across Sites") +
   # change theme from default
-theme_bw()
+theme_minimal()
 
 # displaying object
 ostracodgraph
 ```
 
 ## d. Create a multipanel figure
+
+```{r}
+# salinity
+salinity <- ggplot(data = aq_ins_clean,
+       # x-axis: site
+       # y-axis: mean salinity
+       mapping = aes(x = site_full,
+                     y = med_sal)) +
+  # first layer: salinity measurements at each survey
+  geom_jitter(height = 0,
+              width = 0.1,
+              shape = 21) +
+  # wrapping x-axis text
+  scale_x_discrete(labels = label_wrap(width = 15)) +
+  # second layer: points to represent means
+  stat_summary(fun = median,
+               color = "orange",
+               size = 1) +
+  # relabelling x- and y-axes
+  labs(x = "Site",
+       y = "Median salinity (ppt)",
+       title = "Differences in Median Salinity across sites") +
+  # different theme
+theme_minimal()
+# displaying object
+salinity
+```
+
 
 ## e. Interpret your figure
 
