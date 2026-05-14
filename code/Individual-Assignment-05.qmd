@@ -300,12 +300,25 @@ ggsave("multipanel_figure.png", combined_plot, width = 14, height = 10, dpi = 30
 ## a. Plan your figure
 
 x-axis: Median salinity
-y-axis: Log transformed average abundance per litre
+y-axis: Log transformed average abundance per liter
 color: scientificName
 geometry: geom_point()
 facets: facet_wrap(~scientificName, scales = "free")
 
 ## b. Wrangle your data
+
+```{r}
+#| label: wrangling-aq_ins_clean-to-logsalinity2
+
+
+# new object created from aq_ins_clean
+logsalinity2 <- aq_ins_clean |>
+  # log + 1 transform mean abundance/liter
+  mutate(log_ave_lit = log(ave_lit + 1))
+
+slice_sample(logsalinity2)
+
+```
 
 ## c. Code your figure
 
