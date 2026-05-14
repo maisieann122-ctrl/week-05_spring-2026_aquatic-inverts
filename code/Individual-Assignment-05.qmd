@@ -3,6 +3,9 @@ title: "Individual Assignment 5"
 author: "Maisie Prestridge"
 date: "05/10/2026"
 format: pdf
+execute: 
+  message: false
+  warning: false
 ---
 
 # Set up
@@ -258,6 +261,25 @@ size = 4,
 theme_minimal()
 # displaying object
 copepods
+```
+
+```{r}
+#| label: displaying-multipanel-figure
+combined_plot <- 
+  (salinity + labs(x = NULL)) / 
+  plot_spacer() /
+  (copepods | ostracodgraph) +
+  plot_layout(heights = c(1, 0.4, 1)) &
+  theme(
+    plot.margin = margin(15, 15, 15, 15),
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    axis.title.x = element_text(margin = margin(t = 15)),
+    axis.title.y = element_text(margin = margin(r = 15))
+  )
+
+combined_plot
+
+ggsave("multipanel_figure.png", combined_plot, width = 14, height = 10, dpi = 300)
 ```
 
 ## e. Interpret your figure
