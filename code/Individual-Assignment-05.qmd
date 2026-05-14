@@ -352,3 +352,5 @@ logsal
 
 
 ## d. Interpret your figure
+
+Majority of the taxa show their highest log-transformed average abundance/liter at lower salinities. This can be seen through many of the points clustered near the 0-10 ppt. Ostracoda and Cladocera both have the highest abundance values, but these points occur at lower salinities and are seen less at higher salinities. Additionally, Copepods appear across a wider range of salinities and still have a moderate abundance at mid-salinity sites. Furthermore, Nematoda, Oligochaeta and Polychaeta stay at a low abundance across most the salinity levels.  
