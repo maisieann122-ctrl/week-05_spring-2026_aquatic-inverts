@@ -290,7 +290,7 @@ copepods
 
 ```{r}
 #| label: displaying-multipanel-figure
-#| fig-width: 15
+#| fig-width: 13
 #| fig-height: 8
 
 
