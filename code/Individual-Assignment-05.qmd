@@ -183,6 +183,10 @@ slice_sample(ostracods)
 
 ```{r}
 #| label: coding-ostracod-plot
+#| fig-width: 11
+#| fig-height: 6
+
+
 # base layer
 ostracodgraph <- ggplot(data = ostracods,
        # x-axis: site
@@ -214,8 +218,8 @@ ostracodgraph
 
 ```{r}
 #| label: coding-salinity-plot
-#| fig-width: 12
-#| fig-height: 7
+#| fig-width: 11
+#| fig-height: 6
 
 
 # salinity
