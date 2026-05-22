@@ -339,6 +339,18 @@ logsal <- ggplot(data = logsalinity2,
   labs(x = "Median Salinity (ppt)",
        y = "Log transformed average abundance per liter",
        title = "The total ave abundance as a function of salinity") +
+  # custom colours
+  scale_colour_manual(values = c(
+    "#00A6D6",
+    "#66A61E",
+    "#E6AB02",
+    "#A6761D",
+    "#666666",
+    "#1F78B4",
+    "#1B9E77",
+    "#D95F02",
+    "#7570B3"
+  )) +
   # change theme from default
   theme_minimal() +
 # creating multipanel figure
