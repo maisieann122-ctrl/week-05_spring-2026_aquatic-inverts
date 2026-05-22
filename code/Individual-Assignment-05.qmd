@@ -32,8 +32,7 @@ library(naniar)
 # arrange plots
 library(patchwork)
 
-# custom colour palette
-library(NatParksPalettes)
+
 ```
 
 ## Data
