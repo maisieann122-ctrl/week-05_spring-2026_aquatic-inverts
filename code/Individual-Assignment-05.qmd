@@ -151,12 +151,15 @@ aq_ins_clean <- aq_ins |>
 
 ## a. Plan your figure
 
-x-axis: site_full
-y-axis: log_ave_lit
-geometry to represent average abundance/L: geom_jitter(height = 0,
+- x-axis: site_full
+
+- y-axis: log_ave_lit
+
+- geometry to represent average abundance/L: geom_jitter(height = 0,
               width = 0.1,
               shape = 21)
-geometry to represent medians: 
+              
+- geometry to represent medians: 
 stat_summary(fun = median,
                color = "orange",
                size = 1)
@@ -301,11 +304,15 @@ ggsave("multipanel_figure.png", combined_plot, width = 14, height = 10, dpi = 30
 
 ## a. Plan your figure
 
-x-axis: Median salinity
-y-axis: Log transformed average abundance per liter
-color: scientificName
-geometry: geom_point()
-facets: facet_wrap(~scientificName, scales = "free")
+- x-axis: Median salinity
+
+- y-axis: Log transformed average abundance per liter
+
+- color: scientificName
+
+- geometry: geom_point()
+
+- facets: facet_wrap(~scientificName, scales = "free")
 
 ## b. Wrangle your data
 
