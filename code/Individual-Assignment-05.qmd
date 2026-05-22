@@ -214,6 +214,10 @@ ostracodgraph
 
 ```{r}
 #| label: coding-salinity-plot
+#| fig-width: 12
+#| fig-height: 7
+
+
 # salinity
 salinity <- ggplot(data = aq_ins_clean,
        # x-axis: site
