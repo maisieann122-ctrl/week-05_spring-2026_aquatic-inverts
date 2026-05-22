@@ -290,8 +290,8 @@ copepods
 
 ```{r}
 #| label: displaying-multipanel-figure
-#| fig-width: 11
-#| fig-height: 6
+#| fig-width: 15
+#| fig-height: 8
 
 
 combined_plot <- 
