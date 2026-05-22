@@ -250,6 +250,9 @@ salinity
 
 ```{r}
 #| label: coding-copepod-plot
+#| fig-width: 11
+#| fig-height: 6
+
 
 # cleaning copepods before graphing
 copepods <- aq_ins_clean |>
@@ -287,6 +290,9 @@ copepods
 
 ```{r}
 #| label: displaying-multipanel-figure
+#| fig-width: 11
+#| fig-height: 6
+
 
 combined_plot <- 
   (salinity + labs(x = NULL)) / 
