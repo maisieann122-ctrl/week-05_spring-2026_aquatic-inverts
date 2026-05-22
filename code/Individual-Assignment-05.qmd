@@ -316,8 +316,22 @@ facets: facet_wrap(~scientificName, scales = "free")
 # new object created from aq_ins_clean
 logsalinity2 <- aq_ins_clean |>
   # log + 1 transform mean abundance/liter
-  mutate(log_ave_lit = log(ave_lit + 1))
+  mutate(log_ave_lit = log(ave_lit + 1), 
+  # reorder taxon group levels
+  taxon = factor(taxon, 
+                 levels = c(
+                     "amphipoda",
+                     "cladocera",
+                     "copepod",
+                     "diptera_ceratopogonidae",
+                     "diptera_chironomid",
+                     "gastropod",
+                     "ostracod",
+                     "polychaete",
+                     "tanaid")))
 
+# display rows of samples
+                
 slice_sample(logsalinity2)
 
 ```
